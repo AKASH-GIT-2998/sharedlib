@@ -1,4 +1,7 @@
-def call() {   
-     sh 'mvn package -DskipTests=true'      
-    
+def call() {
+     // Define the maven command to be executed
+     def mavenCommand = 'mvn package -DskipTests=true'
+
+     // Execute the maven command in a shell
+     sh script: mavenCommand, returnStatus: true
 }
